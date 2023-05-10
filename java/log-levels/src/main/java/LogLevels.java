@@ -9,9 +9,17 @@ public class LogLevels {
     }
 
     public static String logLevel(String logLine) {
-
+    	if (logLine.contains("[INFO]")) {
+    		return "info";
+    	} else if (logLine.contains("[WARNING]")) {
+    		return "warning";
+    	} else if (logLine.contains("[ERROR]")) {
+    		return "error";
+    	} else {
+    		return "unknown error type";
+    	}
     	
-        throw new UnsupportedOperationException("Please implement the (static) LogLine.logLevel() method");
+        
     }
 
     public static String reformat(String logLine) {
@@ -20,6 +28,7 @@ public class LogLevels {
 
     public static void main(String[] args) {
     	System.out.println(message("[WARNING]: Invalid operation\n\r"));
+    	System.out.println(logLevel("[WARNING]: Invalid operation"));
     	System.out.println("Hello");
     }
 }
