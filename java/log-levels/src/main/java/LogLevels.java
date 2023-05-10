@@ -3,11 +3,14 @@ import java.lang.*;
 public class LogLevels {
     
     public static String message(String logLine) {
+    	String msg = logLine.replace("\r", "").replace("\n", ""); // Replace white spaces
     	
-    	return logLine.replace("\r", "").replace("\n", "");
+    	return msg.split("]: ")[1]; // Use ']: ' as a split point to get message
     }
 
     public static String logLevel(String logLine) {
+
+    	
         throw new UnsupportedOperationException("Please implement the (static) LogLine.logLevel() method");
     }
 
@@ -16,7 +19,7 @@ public class LogLevels {
     }
 
     public static void main(String[] args) {
-    	System.out.println(message("Hello\n\r"));
+    	System.out.println(message("[WARNING]: Invalid operation\n\r"));
     	System.out.println("Hello");
     }
 }
