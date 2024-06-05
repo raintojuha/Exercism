@@ -1,7 +1,36 @@
 public class Blackjack {
 
     public int parseCard(String card) {
-        throw new UnsupportedOperationException("Please implement the Blackjack.parseCard method");
+        int value = 0;
+        switch (card) {
+            case "ace":
+                value = 11;
+            case "two":
+                value = 2;
+            case "three":
+                value = 3;
+            case "four":
+                value = 4;
+            case "five":
+                value = 5;
+            case "six":
+                value = 6;
+            case "seven":
+                value = 7;
+            case "eight":
+                value = 8;
+            case "nine":
+                value = 9;
+            case "ten": case "jack": case "queen": case "king":
+                value = 10;
+            case "other":
+                value = 0;
+        
+            default:
+                break;
+        }
+
+        return value;
     }
 
     public boolean isBlackjack(String card1, String card2) {
