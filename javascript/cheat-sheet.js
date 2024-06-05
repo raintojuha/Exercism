@@ -22,6 +22,10 @@ import {
 
 // Single line boolean checks
 // (if statement) ? then : else
+
 return knightIsAwake ? false : true;
 return (petDogIsPresent && !archerIsAwake) || (!petDogIsPresent && !archerIsAwake && !knightIsAwake && prisonerIsAwake) ? true : false;
 
+let i = 5;
+i = i > 0 ? 6 : 4;
+// i = 6
